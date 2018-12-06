@@ -5,7 +5,7 @@ composer require guno17/weather
 ```
 Copy config files:
 ```
-rsync -av vendor/guno17/weather/config/di/curlwrap.php ./
+rsync -av vendor/guno17/weather/config/di/curlwrap.php config/di
 ```
 Copy view files:
 ```

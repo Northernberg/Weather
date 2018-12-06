@@ -36,7 +36,7 @@ namespace Anax\View;
     </ul>
 </div>
 <?php if ($data != null) : ?>
-    <?php if ($data[0]["error"] != null) : ?>
+    <?php if (sizeof($data[0]) == 2) : ?>
     <p> <?= $data[0]["error"] ?></p>
     <?php else : ?>
 <h1> Result </h1>

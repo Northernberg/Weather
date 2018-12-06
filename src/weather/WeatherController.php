@@ -79,7 +79,7 @@ class WeatherController implements ContainerInjectableInterface
             $session->set("flashmessage", "Not a valid ip-adress.");
         } else {
             $data = $curl->curl(["https://api.darksky.net/forecast/" . $api["darksky"] . "/" . $ipAdress[0]["latitude"] . "," . $ipAdress[0]["longitude"] . "?exclude=[currently,flags,alerts,hourly]"]);
-            if ($data[0]["error"] != null) {
+            if (sizeof($data[0]) == 2) {
                 $session->set("flashmessage", "No weather to be shown.");
             }
         }

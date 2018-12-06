@@ -9,9 +9,9 @@ rsync -av vendor/guno17/weather/config/di/curlwrap.php ./
 ```
 Copy view files:
 ```
-rsync -av vendor/guno17/weather/view view/
+rsync -av vendor/guno17/weather/view/ view/
 ```
 Copy controller files:
 ```
-rsync -av vendor/guno17/weather/src src/
+rsync -av vendor/guno17/weather/src/ src/
 ```

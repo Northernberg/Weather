@@ -1,16 +1,16 @@
 <?php
 /**
- * Configuration file to add as service in the Di container.
+ * Configuration file for request service.
  */
 return [
-
     // Services to add to the container.
     "services" => [
-        "curlwrap" => [
+        "request" => [
             "shared" => true,
             "callback" => function () {
-                $curl = new \Anax\Models\CurlWrap();
-                return $curl;
+                $obj = new \Anax\Request\Request();
+                $obj->init();
+                return $obj;
             }
         ],
     ],

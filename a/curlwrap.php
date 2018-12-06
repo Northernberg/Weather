@@ -9,7 +9,7 @@ return [
         "curlwrap" => [
             "shared" => true,
             "callback" => function () {
-                $curl = new \Anax\Models\CurlWrap();
+                $curl = new \Anax\Models\curlWrap();
                 return $curl;
             }
         ],

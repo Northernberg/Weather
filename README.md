@@ -1,4 +1,6 @@
 # Weather
+[![CircleCI](https://circleci.com/gh/canax/remserver.svg?style=svg)](https://circleci.com/gh/canax/remserver)
+# Install
 To install with composer:
 ```
 composer require guno17/weather

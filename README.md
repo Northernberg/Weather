@@ -1,4 +1,6 @@
 # Weather
+[![CircleCI](https://circleci.com/gh/Northernberg/Weather.svg?style=svg)](https://circleci.com/gh/Northernberg/Weather)
+# Install
 To install with composer:
 ```
 composer require guno17/weather

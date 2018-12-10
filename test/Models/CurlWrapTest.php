@@ -39,11 +39,9 @@ class CurlWrapTest extends TestCase
      */
     public function testapiAction()
     {
-        $this->di->get("request")->setPost("location", "255.255.255.255");
-        $ipAdress = $this->di->get("request")->getPost("location");
-        $this->assertEquals($ipAdress, "255.255.255.255");
-
         $this->controller->apiActionGet("255.255.255.255");
-        // Test wrong ip
+        $ipAdress = $this->di->get("request")->getPost("location");
+        $this->assertEquals($ipAdress, null);
+
     }
 }

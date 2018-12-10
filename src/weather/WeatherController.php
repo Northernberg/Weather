@@ -66,7 +66,8 @@ class WeatherController implements ContainerInjectableInterface
     public function indexActionPost() : object
     {
         $title = "Weather";
-        $api = require ANAX_INSTALL_PATH . "/config/api_keys.php";
+
+        $api = file_exists(ANAX_INSTALL_PATH . "/config/api_keys.php") ? require ANAX_INSTALL_PATH . "/config/api_keys.php" : null;
 
         $page = $this->di->get("page");
         $request = $this->di->get("request");
@@ -95,7 +96,8 @@ class WeatherController implements ContainerInjectableInterface
 
     public function apiActionGet($location) : array
     {
-        $api = require ANAX_INSTALL_PATH . "/config/api_keys.php";
+        $api = file_exists(ANAX_INSTALL_PATH . "/config/api_keys.php") ? require ANAX_INSTALL_PATH . "/config/api_keys.php" : null;
+
 
         $curl = $this->di->get("curlwrap");
         $data = null;

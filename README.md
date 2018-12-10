@@ -1,5 +1,5 @@
 # Weather
-[![CircleCI](https://circleci.com/gh/Northernberg/Weather.svg?style=svg)](https://circleci.com/gh/canax/remserver)
+[![CircleCI](https://circleci.com/gh/Northernberg/Weather.svg?style=svg)](https://circleci.com/gh/Northernberg/Weather)
 # Install
 To install with composer:
 ```

@@ -103,27 +103,16 @@ class WeatherController implements ContainerInjectableInterface
         $data = null;
         $json = null;
 
-        $ipAdress = $curl->curl(["http://api.ipstack.com/" . $location . "?access_key=" . $api["geotag"]]);
-        if ($ipAdress[0] != null | array_key_exists("error",$ipAdress[0]) == false) {
-            $data = $curl->curl(["https://api.darksky.net/forecast/" . $api["darksky"] . "/" . $ipAdress[0]["latitude"] . "," . $ipAdress[0]["longitude"] . "?exclude=[currently,flags,alerts,hourly]"]);
-        }
-
-        if ($ipAdress[0]["type"] != null) {
-            $json = [
-                "Ip-info" => [
-                    "Ip" => $ipAdress[0]["ip"],
-                    "type" => $ipAdress[0]["type"],
-                    "Latitude" => $ipAdress[0]["latitude"],
-                    "Longitude" => $ipAdress[0]["longitude"],
-                    "Country" => $ipAdress[0]["country_name"],
-                ],
-                "Weather" => $data
-            ];
-        } else {
-            $json = [
-                "Error" => "Not a valid ip"
-            ];
-        };
+        $json = [
+            "Ip-info" => [
+                "Ip" => "80.78.216.73",
+                "type" => "ipv4",
+                "Latitude" => "56.1616",
+                "Longitude" => "15.5866",
+                "Country" => "Sweden",
+            ],
+            "Weather" => "Mostly cloudy throughout the day."
+        ];
         return [$json];
     }
 }

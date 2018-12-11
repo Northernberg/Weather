@@ -82,6 +82,6 @@ class WeatherControllerTest extends TestCase
     {
         $res = $this->controller->apiActionGet("hey");
 
-        // $this->assertArrayHasKey("Error", $res[0]);
+        $this->assertArrayHasKey("Error", $res[0]);
     }
 }

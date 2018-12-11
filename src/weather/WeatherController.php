@@ -104,7 +104,7 @@ class WeatherController implements ContainerInjectableInterface
         $json = null;
 
         $ipAdress = $curl->curl(["http://api.ipstack.com/" . $location . "?access_key=" . $api["geotag"]]);
-        if ($ipAdress[0]["type"] != null) {
+        if ($ipAdress[0] != null) {
             $data = $curl->curl(["https://api.darksky.net/forecast/" . $api["darksky"] . "/" . $ipAdress[0]["latitude"] . "," . $ipAdress[0]["longitude"] . "?exclude=[currently,flags,alerts,hourly]"]);
         }
 

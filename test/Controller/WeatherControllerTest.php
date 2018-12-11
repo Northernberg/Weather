@@ -78,10 +78,10 @@ class WeatherControllerTest extends TestCase
     /**
      * Test the route "index".
      */
-    public function testWrongApiPost()
+    public function testApiPost()
     {
         $res = $this->controller->apiActionGet("hey");
 
-        $this->assertArrayHasKey("Error", $res[0]);
+        $this->assertTrue(array_key_exists("Ip-info", $res[0]));
     }
 }

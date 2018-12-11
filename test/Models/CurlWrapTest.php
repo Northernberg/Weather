@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Weather;
+namespace Anax\Models;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
@@ -10,28 +10,15 @@ use PHPUnit\Framework\TestCase;
  */
 class CurlWrapTest extends TestCase
 {
-    // Create the di container.
-    protected $di;
-    protected $controller;
+    protected $curl;
 
     /**
      * Prepare before each test.
      */
     protected function setUp()
     {
-        global $di;
-
-        // Setup di
-        $this->di = new DIFactoryConfig();
-        $this->di->loadServices(ANAX_INSTALL_PATH . "/config/di");
-
-        // View helpers uses the global $di so it needs its value
-        $di = $this->di;
-
-        // Setup the controller
-        $this->controller = new WeatherController();
-        $this->controller->setDI($this->di);
-        $this->controller->initialize();
+        // Setup the curlwrap
+        $this->curl = new CurlWrap();
     }
 
     /**
@@ -39,9 +26,7 @@ class CurlWrapTest extends TestCase
      */
     public function testapiAction()
     {
-        $this->controller->apiActionGet("255.255.255.255");
-        $ipAdress = $this->di->get("request")->getPost("location");
-        $this->assertEquals($ipAdress, null);
-
+        $res = $this->curl->curl(["Hej"]);
+        $this->assertInternalType("array", $res);
     }
 }

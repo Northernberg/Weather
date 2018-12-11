@@ -96,13 +96,11 @@ class WeatherController implements ContainerInjectableInterface
 
     public function apiActionGet($location) : array
     {
-        $api = file_exists(ANAX_INSTALL_PATH . "/config/api_keys.php") == true ? require ANAX_INSTALL_PATH . "/config/api_keys.php" : null;
-
-
         $curl = $this->di->get("curlwrap");
         $data = null;
         $json = null;
 
+        $ipAdress = $curl->curl(["dummy"]);
         $json = [
             "Ip-info" => [
                 "Ip" => "80.78.216.73",

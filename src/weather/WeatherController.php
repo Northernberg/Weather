@@ -107,12 +107,12 @@ class WeatherController implements ContainerInjectableInterface
         if ($ipAdress[0]["type"] != null) {
             $data = $curl->curl(["https://api.darksky.net/forecast/" . $api["darksky"] . "/" . $ipAdress[0]["latitude"] . "," . $ipAdress[0]["longitude"] . "?exclude=[currently,flags,alerts,hourly]"]);
         }
-        
+
         if ($ipAdress[0]["type"] != null) {
             $json = [
                 "Ip-info" => [
                     "Ip" => $ipAdress[0]["ip"],
-                    "Type" => $ipAdress[0]["type"],
+                    "type" => $ipAdress[0]["type"],
                     "Latitude" => $ipAdress[0]["latitude"],
                     "Longitude" => $ipAdress[0]["longitude"],
                     "Country" => $ipAdress[0]["country_name"],

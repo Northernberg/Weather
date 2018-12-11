@@ -80,7 +80,7 @@ class WeatherControllerTest extends TestCase
      */
     public function testApiPost()
     {
-        $res = $this->controller->apiActionGet("hey");
+        $res = $this->controller->apiActionGet();
 
         $this->assertTrue(array_key_exists("Ip-info", $res[0]));
     }

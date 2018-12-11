@@ -94,11 +94,10 @@ class WeatherController implements ContainerInjectableInterface
         ]);
     }
 
-    public function apiActionGet($location) : array
+    public function apiActionGet() : array
     {
         $curl = $this->di->get("curlwrap");
         $data = null;
-        $json = null;
 
         $ipAdress = $curl->curl(["dummy"]);
         $json = [
